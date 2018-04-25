@@ -1,13 +1,13 @@
-import {ADD_COMMENT} from './actions'
-import {REMOVE_COMMENT} from './actions'
-import {EDIT_COMMENT} from './actions'
-import {THUMB_UP_COMMENT} from './actions'
-import {THUMB_DOWN_COMMENT} from './actions'
+import {ADD_COMMENT} from './actions.js'
+import {REMOVE_COMMENT} from './actions.js'
+import {EDIT_COMMENT} from './actions.js'
+import {THUMB_UP_COMMENT} from './actions.js'
+import {THUMB_DOWN_COMMENT} from './actions.js'
 
-const initialState = {
-    comments: [],
-    users: []
-};
+// const initialState = {
+//     comments: [],
+//     users: []
+// };
 
 function comments(state = [], action) {
     switch(action.type) {
@@ -48,3 +48,5 @@ function comments(state = [], action) {
             return state;
     }
 }
+
+export default comments;

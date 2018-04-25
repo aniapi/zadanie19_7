@@ -6,3 +6,15 @@ const reducer = combineReducers({
   comments,
   users
 });
+
+
+// const initialState = {
+//     comments: [],
+//     users: []
+// };
+
+// function reducer(state = initialState, action) {
+//     return state;
+// }
+
+export default reducer;

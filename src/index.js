@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
-import addComment from './actions';
-
+// import { removeComment } from './actions';
+// import { editComment } from './actions';
+// import { thumbUpComment } from './actions';
+// import { thumbDownComment } from './actions';
+import { addComment } from './actions';
+import reducer from './reducer.js';
 import { createStore } from 'redux';
 
 const store = createStore(reducer);
@@ -19,5 +23,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+
 
 

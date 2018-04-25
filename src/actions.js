@@ -1,63 +1,57 @@
-// tworzenie komentarza
-const ADD_COMMENT = 'ADD_COMMENT';
+import uuid from 'uuid';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const EDIT_COMMENT = 'EDIT_COMMENT';
+export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
+export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 
-function addComment(text) {
+// tworzenie komentarza
+
+function addComment(text, id) {
     return {
         type: ADD_COMMENT,
-        text,
-        id: commentId
+        text: text,
+        id: uuid.v4()
     }
 }
 
 // edycja komentarza
-const EDIT_COMMENT = 'EDIT_COMMENT';
 
-function editComment(text) {
+function editComment(text, id) {
     return {
         type: EDIT_COMMENT,
-        text,
-        id: commentId
+        text: text,
+        id: id
     }
 }
 
 // usuwanie komentarza
-const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
-function removeComment() {
+function removeComment(id) {
     return {
         type: REMOVE_COMMENT,
-        id: commentId
+        id: id
     }
 }
 
 // ocenianie w górę
-const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
 
-function thumbUpComment(commentId) {
+function thumbUpComment(id) {
     return {
         type: THUMB_UP_COMMENT,
-        id: commentId
+        id: id,   
     }
 }
 
 // ocenianie w dół
-const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 
-function thumbDownComment(commentId) {
+function thumbDownComment(id) {
     return {
         type: THUMB_DOWN_COMMENT,
-        id: commentId
+        id: id
     }
 }
 
-export ADD_COMMENT;
-export REMOVE_COMMENT;
-export EDIT_COMMENT;
-export THUMB_UP_COMMENT;
-export THUMB_DOWN_COMMENT;
-
-export addComment;
-export removeComment;
-export editComment;
-export thumbUpComment;
-export thumbDownComment;
+export {
+    addComment, removeComment, editComment, thumbUpComment, thumbDownComment
+}
